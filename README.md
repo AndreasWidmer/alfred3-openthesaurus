@@ -13,3 +13,6 @@ Usage:
 Download & Installation:
 ------
 Click [here](https://github.com/AndreasWidmer/alfred3-openthesaurus/blob/master/build/openthesaurus.alfredworkflow?raw=true) for the ready to use .alfredworkflow file. Simply download the file and execute it for automagical install in Alfred.
+
+
+More information can be found at the [Alfred Forum](https://www.alfredforum.com/topic/3644-openthesaurusde-v23-workflow/)
