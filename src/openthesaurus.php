@@ -2,7 +2,7 @@
 
 function ot($request) {
 
-	$url = "https://www.openthesaurus.de/synonyme/search?q=" . clean_utf8($request) . "&format=application/json";
+	$url = "https://www.openthesaurus.de/synonyme/search?q=" . urlencode(clean_utf8($request)) . "&format=application/json";
 
 	$defaults = array(
 		CURLOPT_RETURNTRANSFER => true,
@@ -30,7 +30,7 @@ function ot($request) {
 		$syns = array();
 		foreach($json->synsets as $item) {
 			foreach($item->terms as $itm) {
-				$itm->term = clean_utf8($itm->term);
+				$itm->term = $itm->term;
 				if(!in_array($itm->term, $syns) && (strtolower($itm->term) != strtolower($request))) {
 					array_push($syns, $itm->term);
 					$result .= '<item uid="' . $itm->term . '" arg="' . $itm->term . '">';
